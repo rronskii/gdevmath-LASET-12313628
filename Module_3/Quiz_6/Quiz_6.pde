@@ -17,7 +17,7 @@ void draw()
   background(50);
 
   PVector mouse = mousePos();
-  mouse.normalize().mult(200);
+  mouse.normalize().mult(250);
   
   float magnitude = mouse.mag();
   println(magnitude);
