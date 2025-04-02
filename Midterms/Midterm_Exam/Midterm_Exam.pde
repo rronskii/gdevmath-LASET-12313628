@@ -7,12 +7,11 @@ void setup()
   size(1080, 720, P3D);
   camera(0, 0, Window.eyeZ, 0, 0, 0, 0, -1, 0);
   
-  // Generate black ho
-  blackHole.position.x = 0;
-  blackHole.position.y = 0;
-  blackHole.renderBlackHole();
-
+  // Generate black hole
   blackHolePosition();
+  blackHole.renderBlackHole();
+  
+  // Generate matter
   generateMatter();
 }
 
@@ -63,14 +62,14 @@ void draw()
   for (Walker matter : matter)
   {
     PVector direction = PVector.sub(blackHole.position, matter.position);
-    direction.normalize().mult(7); // matter speed
+    direction.normalize().mult(10); // matter speed
     
     matter.position.add(direction);
     
     matter.renderMatter();
   }
   
-  // Render black hole
+  // Generate black hole
   blackHole.renderBlackHole();
   
   t++;

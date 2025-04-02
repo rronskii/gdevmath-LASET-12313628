@@ -2,12 +2,9 @@ public class Walker {
 
   public PVector position = new PVector();
   public float scale = 50;
-  public color walkerColor;
+  public color randomColor = color(random(255), random(255), random(255), random(75, 150));
   
-    public Walker()
-  {
-    walkerColor = color(random(255), random(255), random(255), random(75, 150));
-  }
+  public Walker(){}
   
   public void renderBlackHole()
   {
@@ -19,7 +16,7 @@ public class Walker {
   public void renderMatter()
   {
     noStroke();
-    fill(walkerColor);
+    fill(randomColor);
     circle(position.x, position.y, scale);
   }
 }
